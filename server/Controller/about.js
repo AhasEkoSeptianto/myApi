@@ -16,12 +16,10 @@ module.exports = {
 				// use collections
 				const col = db.collection("database");
 				const myDoc = await col.find({}).toArray((err, result) => {
-					console.log(result);
+					// get data
+					res.send({ application: result });
 				});
-				// get data
 
-				res.send("oke");
-				// res.send({ application: result });
 				client.close();
 			} catch (err) {
 				console.log(err.stack);
@@ -44,12 +42,10 @@ module.exports = {
 				// use collections
 				const col = db.collection("database");
 				const myDoc = await col.find({}).toArray((err, result) => {
-					console.log(result);
+					res.json({ application: result });
 				});
 				// get data
 
-				res.send("oke");
-				// res.send({ application: result });
 				client.close();
 			} catch (err) {
 				console.log(err.stack);
